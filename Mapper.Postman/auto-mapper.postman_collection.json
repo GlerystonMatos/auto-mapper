@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "4c50bd5d-9103-47de-8b79-e887a1fbb2a3",
+		"name": "auto-mapper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario/Nome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/Usuario/Tobias",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Usuario",
+						"Tobias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario/All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/Usuario",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Usuario"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
