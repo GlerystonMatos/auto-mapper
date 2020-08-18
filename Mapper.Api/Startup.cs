@@ -1,12 +1,13 @@
 using AutoMapper;
-using AutoMapperNetCore.Api.AutoMapper;
+using Mapper.CrossCutting;
+using Mapper.Service.AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace AutoMapperNetCore.Api
+namespace Mapper.Api
 {
     public class Startup
     {
@@ -21,6 +22,7 @@ namespace AutoMapperNetCore.Api
         {
             services.AddControllers();
             services.AddAutoMapper(typeof(AutoMapping));
+            services.RegisterDependencies();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

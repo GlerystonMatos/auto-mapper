@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace AutoMapperNetCore.Domain.Dto
+namespace Mapper.Domain.Dto
 {
-    public class UsuarioDto
+    public class UsuarioDto : Dto
     {
         public UsuarioDto(string nome)
         {
@@ -10,8 +10,8 @@ namespace AutoMapperNetCore.Domain.Dto
             Nome = nome;
         }
 
-        public Guid Id { get; }
+        public string Nome { get; set; }
 
-        public string Nome { get; }
+        public PerfilDto Perfil { get; set; }
     }
 }
