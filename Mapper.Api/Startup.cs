@@ -1,6 +1,6 @@
 using AutoMapper;
-using Mapper.CrossCutting;
-using Mapper.Service.AutoMapper;
+using Mapper.Api.AutoMapper;
+using Mapper.Api.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,8 +21,8 @@ namespace Mapper.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddAutoMapper(typeof(AutoMapping));
-            services.RegisterDependencies();
+            services.AddAutoMapper(typeof(ConfigurationMapping));
+            services.AddScoped<MapperContext>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

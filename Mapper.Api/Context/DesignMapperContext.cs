@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace Mapper.Data.Context
+namespace Mapper.Api.Context
 {
     public class DesignMapperContext : IDesignTimeDbContextFactory<MapperContext>
     {

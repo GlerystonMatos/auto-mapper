@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mapper.Domain.Dto
+namespace Mapper.Api.Dto
 {
     public class PerfilDto : Dto
     {

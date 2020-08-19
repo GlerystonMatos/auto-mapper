@@ -1,8 +1,8 @@
-﻿using Mapper.Domain.Entities;
+﻿using Mapper.Api.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Mapper.Data.Configuration
+namespace Mapper.Api.Configuration
 {
     public class PerfilConfig : IEntityTypeConfiguration<Perfil>
     {

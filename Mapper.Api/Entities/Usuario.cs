@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mapper.Domain.Entities
+namespace Mapper.Api.Entities
 {
     public class Usuario : Entity
     {

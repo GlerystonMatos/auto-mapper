@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mapper.Domain.Entities
+namespace Mapper.Api.Entities
 {
     public class Perfil : Entity
     {
