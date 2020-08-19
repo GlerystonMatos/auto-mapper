@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Mapper.Domain.Entities
+namespace Mapper.Api.Dto
 {
-    public class Entity
+    public class Dto
     {
         public Guid Id { get; set; }
     }

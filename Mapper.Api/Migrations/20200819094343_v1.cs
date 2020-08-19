@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Mapper.Data.Migrations
+namespace Mapper.Api.Migrations
 {
     public partial class v1 : Migration
     {
@@ -40,22 +40,22 @@ namespace Mapper.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Perfil",
                 columns: new[] { "Id", "Nome" },
-                values: new object[] { new Guid("ee41c173-2df4-4014-ab9f-93ed74579fc7"), "Administrador" });
+                values: new object[] { new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"), "Administrador" });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "Id", "IdPerfil", "Nome" },
-                values: new object[] { new Guid("09ed19f5-a91c-424a-aff0-d2f0e63b8a26"), new Guid("ee41c173-2df4-4014-ab9f-93ed74579fc7"), "Snoopy" });
+                values: new object[] { new Guid("4f45917e-0391-42bc-a677-c3666d18ab82"), new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"), "Snoopy" });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "Id", "IdPerfil", "Nome" },
-                values: new object[] { new Guid("911417ce-88f7-48c5-8186-4695b60a92d8"), new Guid("ee41c173-2df4-4014-ab9f-93ed74579fc7"), "Lola" });
+                values: new object[] { new Guid("2ab71627-e14c-48ee-ae7e-ac411b8fdf8b"), new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"), "Lola" });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "Id", "IdPerfil", "Nome" },
-                values: new object[] { new Guid("d5318abd-2b47-4115-a900-4c6fb1792456"), new Guid("ee41c173-2df4-4014-ab9f-93ed74579fc7"), "Tobias" });
+                values: new object[] { new Guid("1bb7f3b7-735d-4455-9d29-96c87473ac1a"), new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"), "Tobias" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Perfil_Nome",

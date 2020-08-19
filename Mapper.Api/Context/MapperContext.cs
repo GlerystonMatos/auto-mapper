@@ -1,24 +1,23 @@
-﻿using Mapper.Data.Configuration;
-using Mapper.Domain.Entities;
+﻿using Mapper.Api.Configuration;
+using Mapper.Api.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Mapper.Data.Context
+namespace Mapper.Api.Context
 {
     public class MapperContext : DbContext
     {
         private readonly IConfiguration _configuration;
 
         public MapperContext(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
+            => _configuration = configuration;
 
         public MapperContext(DbContextOptions<MapperContext> options) : base(options)
         {
         }
 
         public DbSet<Usuario> Usuario { get; set; }
+
         public DbSet<Perfil> Perfil { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

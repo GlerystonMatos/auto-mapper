@@ -1,5 +1,5 @@
 using AutoMapper;
-using Mapper.Service.AutoMapper;
+using Mapper.Api.AutoMapper;
 using NUnit.Framework;
 
 namespace Mapper.NUnitTest
@@ -9,7 +9,7 @@ namespace Mapper.NUnitTest
         [Test]
         public void ConfigurationIsValid()
         {
-            MapperConfiguration mapperConfiguration = new MapperConfiguration(cfg => cfg.AddProfile(new AutoMapping()));
+            MapperConfiguration mapperConfiguration = new MapperConfiguration(cfg => cfg.AddProfile(new ConfigurationMapping()));
             IMapper mapper = mapperConfiguration.CreateMapper();
             mapper.ConfigurationProvider.AssertConfigurationIsValid();
         }

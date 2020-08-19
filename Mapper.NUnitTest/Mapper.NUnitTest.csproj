@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mapper.Service\Mapper.Service.csproj" />
+    <ProjectReference Include="..\Mapper.Api\Mapper.Api.csproj" />
   </ItemGroup>
 
 </Project>
