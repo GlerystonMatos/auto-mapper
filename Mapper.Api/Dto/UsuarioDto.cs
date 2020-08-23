@@ -16,9 +16,9 @@ namespace Mapper.Api.Dto
 
         public string Senha { get; set; }
 
-        public string Status 
+        public string Status
         {
-            get 
+            get
             {
                 return "Ativo";
             }
