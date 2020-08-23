@@ -6,7 +6,27 @@
 	},
 	"item": [
 		{
-			"name": "Usuario/Nome",
+			"name": "Cliente/{nome}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/Cliente/Tobias",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Cliente",
+						"Tobias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario/{nome}",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -26,7 +46,7 @@
 			"response": []
 		},
 		{
-			"name": "Usuario/All",
+			"name": "Usuario",
 			"request": {
 				"method": "GET",
 				"header": [],
