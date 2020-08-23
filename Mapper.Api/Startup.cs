@@ -1,5 +1,3 @@
-using AutoMapper;
-using Mapper.Api.AutoMapper;
 using Mapper.Api.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,7 +19,6 @@ namespace Mapper.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddAutoMapper(typeof(ConfigurationMapping));
             services.AddScoped<MapperContext>();
         }
 
