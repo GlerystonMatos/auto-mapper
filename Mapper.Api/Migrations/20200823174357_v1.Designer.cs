@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mapper.Api.Migrations
 {
     [DbContext(typeof(MapperContext))]
-    [Migration("20200819094343_v1")]
+    [Migration("20200823174357_v1")]
     partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,31 @@ namespace Mapper.Api.Migrations
                 .HasAnnotation("ProductVersion", "3.1.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Mapper.Api.Entities.Cliente", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Nome")
+                        .IsUnique();
+
+                    b.ToTable("Cliente");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("02f4b241-a1ad-488f-b04b-0bc7cbf7f382"),
+                            Nome = "Tobias"
+                        });
+                });
 
             modelBuilder.Entity("Mapper.Api.Entities.Perfil", b =>
                 {
@@ -41,7 +66,7 @@ namespace Mapper.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"),
+                            Id = new Guid("e5777322-6c48-4482-8194-95e15fbe4a74"),
                             Nome = "Administrador"
                         });
                 });
@@ -71,20 +96,20 @@ namespace Mapper.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4f45917e-0391-42bc-a677-c3666d18ab82"),
-                            IdPerfil = new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"),
+                            Id = new Guid("e1c923c4-bdb6-4c1b-9e02-acb845b3ab5a"),
+                            IdPerfil = new Guid("e5777322-6c48-4482-8194-95e15fbe4a74"),
                             Nome = "Snoopy"
                         },
                         new
                         {
-                            Id = new Guid("2ab71627-e14c-48ee-ae7e-ac411b8fdf8b"),
-                            IdPerfil = new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"),
+                            Id = new Guid("b5a09339-6f6d-4a9b-9b81-17fa1a16cdb3"),
+                            IdPerfil = new Guid("e5777322-6c48-4482-8194-95e15fbe4a74"),
                             Nome = "Lola"
                         },
                         new
                         {
-                            Id = new Guid("1bb7f3b7-735d-4455-9d29-96c87473ac1a"),
-                            IdPerfil = new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"),
+                            Id = new Guid("1f47bfdc-19ec-4dc2-bd8f-3dc3cccbe185"),
+                            IdPerfil = new Guid("e5777322-6c48-4482-8194-95e15fbe4a74"),
                             Nome = "Tobias"
                         });
                 });

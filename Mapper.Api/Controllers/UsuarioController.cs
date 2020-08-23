@@ -24,16 +24,10 @@ namespace Mapper.Api.Controllers
 
         [HttpGet("{nome}")]
         public IActionResult Get(string nome)
-            => Ok(FindByNome(nome));
+            => Ok(_context.Set<Usuario>().Where(u => u.Nome.Equals(nome)).Include(u => u.Perfil).ProjectTo<UsuarioDto>(_mapper.ConfigurationProvider).AsQueryable());
 
-        private UsuarioDto FindByNome(string nome)
-            => _context.Set<Usuario>().Where(u => u.Nome.Equals(nome)).ProjectTo<UsuarioDto>(_mapper.ConfigurationProvider).FirstOrDefault();
-
-        [HttpGet()]
+        [HttpGet]
         public IActionResult Get()
-            => Ok(GetAll());
-
-        private IQueryable<UsuarioDto> GetAll()
-            => _context.Set<Usuario>().Include(u => u.Perfil).ProjectTo<UsuarioDto>(_mapper.ConfigurationProvider).AsQueryable();
+            => Ok(_context.Set<Usuario>().Include(u => u.Perfil).ProjectTo<UsuarioDto>(_mapper.ConfigurationProvider).AsQueryable());
     }
 }

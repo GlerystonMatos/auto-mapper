@@ -8,6 +8,18 @@ namespace Mapper.Api.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Cliente",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Nome = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cliente", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Perfil",
                 columns: table => new
                 {
@@ -38,24 +50,35 @@ namespace Mapper.Api.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Cliente",
+                columns: new[] { "Id", "Nome" },
+                values: new object[] { new Guid("02f4b241-a1ad-488f-b04b-0bc7cbf7f382"), "Tobias" });
+
+            migrationBuilder.InsertData(
                 table: "Perfil",
                 columns: new[] { "Id", "Nome" },
-                values: new object[] { new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"), "Administrador" });
+                values: new object[] { new Guid("e5777322-6c48-4482-8194-95e15fbe4a74"), "Administrador" });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "Id", "IdPerfil", "Nome" },
-                values: new object[] { new Guid("4f45917e-0391-42bc-a677-c3666d18ab82"), new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"), "Snoopy" });
+                values: new object[] { new Guid("e1c923c4-bdb6-4c1b-9e02-acb845b3ab5a"), new Guid("e5777322-6c48-4482-8194-95e15fbe4a74"), "Snoopy" });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "Id", "IdPerfil", "Nome" },
-                values: new object[] { new Guid("2ab71627-e14c-48ee-ae7e-ac411b8fdf8b"), new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"), "Lola" });
+                values: new object[] { new Guid("b5a09339-6f6d-4a9b-9b81-17fa1a16cdb3"), new Guid("e5777322-6c48-4482-8194-95e15fbe4a74"), "Lola" });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "Id", "IdPerfil", "Nome" },
-                values: new object[] { new Guid("1bb7f3b7-735d-4455-9d29-96c87473ac1a"), new Guid("09133751-e1b5-45f4-9cdc-2881b362ec0f"), "Tobias" });
+                values: new object[] { new Guid("1f47bfdc-19ec-4dc2-bd8f-3dc3cccbe185"), new Guid("e5777322-6c48-4482-8194-95e15fbe4a74"), "Tobias" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Cliente_Nome",
+                table: "Cliente",
+                column: "Nome",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Perfil_Nome",
@@ -77,6 +100,9 @@ namespace Mapper.Api.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Cliente");
+
             migrationBuilder.DropTable(
                 name: "Usuario");
 

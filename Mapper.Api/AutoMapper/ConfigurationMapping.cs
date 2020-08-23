@@ -8,6 +8,9 @@ namespace Mapper.Api.AutoMapper
     {
         public ConfigurationMapping()
         {
+            CreateMap<Cliente, ClienteDto>()
+                .ReverseMap();
+
             CreateMap<Usuario, UsuarioDto>()
                 .ForMember(dto => dto.Senha, opt => opt.MapFrom(u => u.Id.ToString().Replace("-", "").ToLower()))
                 .ForMember(dto => dto.Status, opt => opt.Ignore())

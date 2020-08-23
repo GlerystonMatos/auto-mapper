@@ -24,8 +24,12 @@ namespace Mapper.Api.Context
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.ApplyConfiguration(new ClienteConfig());
             modelBuilder.ApplyConfiguration(new UsuarioConfig());
             modelBuilder.ApplyConfiguration(new PerfilConfig());
+
+            modelBuilder.Entity<Cliente>().HasData(
+                new Cliente("Tobias"));
 
             Perfil perfil = new Perfil("Administrador");
             modelBuilder.Entity<Perfil>().HasData(
